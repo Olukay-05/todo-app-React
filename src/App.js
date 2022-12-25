@@ -29,7 +29,7 @@ function App() {
 
 
     const saveLocalTodos = () => {
-      getLocalTodos();
+      localStorage.setItem("todos", JSON.stringify(todos));
     };
 
     const getLocalTodos = () => {
@@ -43,6 +43,7 @@ function App() {
 
     filterHandler();
     saveLocalTodos();
+    getLocalTodos();
   }, [todos, status]);
 
 
